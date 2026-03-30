@@ -1,4 +1,4 @@
-#game{
+#game {
     min-height: 100vh;
     width: 100vw;
     display: flex;
@@ -7,37 +7,39 @@
     gap: 30px;
     padding: 20px;
 }
+
+/* 🔥 smoother animated gradient */
 body {
   margin: 0;
   height: 100vh;
-  background: linear-gradient( 
-    450deg,
-    #f74848,
-    #ffd900,
-    #ffff00,
-    #00ff00,
-    #00fff2,
-    #2460d1,
-    #fa77e9
+  background: linear-gradient(
+    135deg,
+    #ff512f,
+    #dd2476,
+    #24c6dc,
+    #5433ff
   );
-  background-size: 1400% 1400%;
-  animation: rainbow 4s ease infinite;
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  font-family: 'Poppins', sans-serif;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.blocks {
+    transition: transform 0.3s ease;
+}
+
+.blocks:hover {
+    transform: translateY(-5px);
 }
 
 @media (max-width: 992px) {
-  #game{
+  #game {
       flex-direction: column;
-  }
-}
-
-@keyframes rainbow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
   }
 }

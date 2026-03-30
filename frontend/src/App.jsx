@@ -1,23 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Game from "./components/Game";
 import Dashboard from "./components/Dashboard";
 import './App.css'
 
 const App = () => {
+  const [refresh, setRefresh] = useState(false);
+
+  const refreshDashboard = () => {
+    setRefresh(prev => !prev);
+  };
+
   return (
-    <>
     <div id='game'>
       <div className='blocks'>
-        <Game />
+        <Game refreshDashboard={refreshDashboard} />
       </div>
 
       <div className='blocks'>
-        <Dashboard />
+        <Dashboard refresh={refresh} />
       </div>
-    
     </div>
-    
-    </>
   )
 }
 

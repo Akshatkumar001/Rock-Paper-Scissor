@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { getAllPlayers } from "../services/api";
 import './Dashboard.css';
 
-const Dashboard = () => {
+const Dashboard = ({ refresh }) => {
     const [players, setPlayers] = useState([]);
 
     useEffect(() => {
         fetchPlayers();
-    }, []);
+    }, [refresh]); // 🔥 auto refresh
 
     const fetchPlayers = async () => {
         const res = await getAllPlayers();
@@ -16,11 +16,9 @@ const Dashboard = () => {
 
     return (
         <div id="dashboard">
-            <div id="dash-title">
-                <h2>Player Dashboard</h2>
-            </div>
+            <h2>🏆 Leaderboard</h2>
 
-            <table >
+            <table>
                 <thead>
                     <tr>
                         <th>Name</th>

@@ -1,88 +1,86 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
 }
 
 #dashboard {
     min-height: 70vh;
     width: 40vw;
     max-width: 500px;
-    padding: 40px 20px;
-    display: flex;
+    padding: 30px;
+
     border-radius: 40px;
-    border: 2px solid rgb(255, 255, 255);
+
+    /* 🔥 glass effect */
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.3);
+
+    box-shadow: 0 0 40px rgba(255,255,255,0.15),
+                0 10px 30px rgba(0,0,0,0.3);
+
+    display: flex;
     flex-direction: column;
     align-items: center;
-    box-sizing: border-box;
-    backdrop-filter: blur(8px);
-    background: rgba(238, 213, 213, 0.3);
 }
 
 #dashboard h2 {
-    color: #ffffff;
-    margin-bottom: 25px;
-    font-size: 2rem;
-    letter-spacing: 1px;
-    font-size: 5vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+
+    text-shadow: 0 0 10px white, 0 0 20px gold;
 }
 
+/* table */
 #dashboard table {
-    width: 90%;
-    margin-top: 5%;
-    max-width: 900px;
-    align-content: center;
+    width: 100%;
     border-collapse: collapse;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
-    font-weight: 700;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    font-size: 2vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
+/* header */
 #dashboard thead {
-    backdrop-filter: blur(8px);
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255,255,255,0.25);
 }
 
 #dashboard th {
-    padding: 14px 12px;
-    text-align: center;
+    padding: 12px;
     font-size: 1rem;
 }
 
+/* rows */
 #dashboard td {
-    padding: 12px;
-    text-align: center;
-    font-size: 0.95rem;
+    padding: 10px;
 }
 
-#dash-title{
-    border-bottom: 4px solid rgb(255, 255, 255);
+/* hover */
+#dashboard tbody tr {
+    transition: all 0.3s ease;
 }
 
 #dashboard tbody tr:hover {
-    transition: background-color 0.3s ease;
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.03);
 }
 
-@media (max-width: 768px) {
-    #dashboard table {
-        width: 100%;
-    }
-
-    #dashboard h2 {
-        font-size: 1.6rem;
-    }
-
-    #dashboard th,
-    #dashboard td {
-        padding: 10px;
-        font-size: 0.85rem;
-    }
+/* 🏆 highlight top 3 */
+#dashboard tbody tr:nth-child(1) {
+    background: rgba(255, 215, 0, 0.3);
 }
-@media (max-width: 992px){
-    #dashboard{
+#dashboard tbody tr:nth-child(2) {
+    background: rgba(192, 192, 192, 0.3);
+}
+#dashboard tbody tr:nth-child(3) {
+    background: rgba(205, 127, 50, 0.3);
+}
+
+/* responsive */
+@media (max-width: 992px) {
+    #dashboard {
         width: 90vw;
     }
 }

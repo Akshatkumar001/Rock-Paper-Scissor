@@ -1,6 +1,9 @@
 import axios from "axios";
 
+const API = "http://localhost:5000/api/game";
+
 export const playGame = (data) =>
-    axios.post("http://localhost:5000/api/game/play", data);
+    axios.post(`${API}/play`, data);
+
 export const getAllPlayers = () =>
-    axios.get("http://localhost:5000/api/game/players");
+    axios.get(`${API}/players`);

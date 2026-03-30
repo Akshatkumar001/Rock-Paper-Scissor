@@ -5,7 +5,8 @@ const playerSchema = new mongoose.Schema({
     wins: { type: Number, default: 0 },
     losses: { type: Number, default: 0 },
     draws: { type: Number, default: 0 },
-    points: { type: Number, default: 0 }
+    points: { type: Number, default: 0 },
+    history: { type: [String], default: [] } // 🔥 NEW
 });
 
 module.exports = mongoose.model("Player", playerSchema);
